@@ -13,7 +13,7 @@ export function Nav() {
           <button
             key={item}
             onClick={() => scrollTo(item)}
-            className="font-mono text-[13px] font-light tracking-[0.03em] text-[#6b6860] hover:text-[#1a1917] transition-colors lowercase bg-transparent border-0 cursor-none"
+            className="font-mono text-[13px] font-light tracking-[0.03em] text-[#6b6860] hover:text-[#1a1917] transition-colors lowercase bg-transparent border-0 cursor-fine-none"
           >
             {item}
           </button>

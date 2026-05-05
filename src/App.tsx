@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Work } from './components/Work'
@@ -26,12 +26,29 @@ function CursorDot() {
   return <div ref={dotRef} className="cursor-dot" />
 }
 
+function useFinePointer() {
+  const [fine, setFine] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia('(pointer: fine)')
+    const onChange = () => setFine(mq.matches)
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+
+  return fine
+}
+
 export default function App() {
+  const showCursorDot = useFinePointer()
+
   return (
     <>
-      <CursorDot />
+      {showCursorDot ? <CursorDot /> : null}
       <div className="min-h-screen bg-[#f5f3ef] text-[#1a1917]">
-        <div className="font-serif text-[17px] leading-[1.7] px-8 sm:px-8 py-16 pb-28 max-w-[720px] mx-auto">
+        <div className="font-serif text-[17px] leading-[1.7] px-8 sm:px-8 py-16 pb-16 max-w-[720px] mx-auto">
           <Nav />
           <Hero />
           <Divider label="selected work" />

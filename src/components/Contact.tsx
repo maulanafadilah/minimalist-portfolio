@@ -18,7 +18,7 @@ export function Contact() {
           { href: "https://linkedin.com/in/maulanafadilah", label: "linkedin" },
           { href: "https://github.com/maulanafadilah", label: "github" },
           {
-            href: "https://standardresume.co/r/maulanafadilah",
+            href: "https://s.id/maulanafadilah",
             label: "resume",
           },
         ].map(({ href, label }) => (

@@ -61,7 +61,7 @@ export function Work() {
   return (
     <section id="work">
       <WorkItem
-        company="meetgeek · cerulean studio"
+        company="meetgeek · cerulean studio, italy (remote)"
         period="mar 2024 — present"
         title="AI meeting notetaker, at scale"
         body={[
@@ -77,7 +77,7 @@ export function Work() {
         ]}
       />
       <WorkItem
-        company="pt infomedia nusantara"
+        company="pt infomedia nusantara, indonesia (on-site)"
         period="dec 2022 — dec 2023"
         title="Internal tools that replaced manual chaos"
         body={[
